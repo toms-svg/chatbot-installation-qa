@@ -10,16 +10,12 @@ Design/content package only. Nothing here was sent or deployed.
 - `preview-desktop.png` / `preview-mobile.png` — rendered screenshots of the Horne email at desktop and mobile widths.
 - `assets/lead-capture-screenshot.png` — MOCKUP: AI Assistant collecting a quote request (not a live conversation), badged as such in the image.
 - `assets/hvac-response-screenshot.png` — MOCKUP: AI Assistant answering an HVAC troubleshooting question (not a live conversation), badged as such in the image.
-- `assets/customer-portal-screenshot.png` — REAL PRODUCT SCREENSHOT (not a mockup). Captured by rendering the actual `Dashboard` "Overview" component from `toms-svg/customer-chatbot-portal` (production `main` branch, the merged Claude V2 frontend rebuild) with fabricated, safe demo props — no real customer data, no live Supabase/Stripe/Telnyx connection was used. Company name shown is a generic placeholder ("Sample Home Services Co."), not Horne's real account. See CUSTOMER PORTAL SCREENSHOT PROVENANCE below.
-- `assets/src-lead-capture.html`, `assets/src-hvac-response.html` — editable source for the two chat mockups. Edit and re-render these to produce new screenshots for future prospects/industries.
-- `assets/src-portal.html` — superseded. This was an earlier illustrative portal mockup, kept only for history; it is no longer referenced by any email (replaced by the real product screenshot above).
+- `assets/customer-portal-screenshot.png` — MOCKUP: an illustrative portal design built for this email, not a live screenshot of the real product — badged as such in the image. (A real screenshot of the actual `toms-svg/customer-chatbot-portal` Overview screen was tried and is documented below for reference, but the approved version of this email uses the illustrative mockup instead.)
+- `assets/src-lead-capture.html`, `assets/src-hvac-response.html`, `assets/src-portal.html` — editable source for the three mockups. Edit and re-render these to produce new screenshots for future prospects/industries.
 
-## Customer portal screenshot provenance
+## Customer portal screenshot — note on what was tried
 
-- Source repo: `toms-svg/customer-chatbot-portal`, `main` branch (production, read-only — nothing was pushed back to it).
-- Screen shown: the customer-facing "Overview" tab of the Customer Portal (`Dashboard` component, `activeView === 'overview'`) — chosen because it's the single screen that best shows a prospective buyer what they'd get: account metrics, recent conversations, recent leads.
-- Method: checked out `main` into a scratch git worktree (outside this repo, discarded after the screenshot), temporarily exported the `Dashboard` component and pointed the app's entry point at a small harness rendering it with hand-written demo data — no `.env` secrets, no real Supabase project, no network calls. The worktree was deleted afterward; no commits were made to `customer-chatbot-portal`.
-- Excluded by construction: Admin Portal, Cold Caller Portal, Telnyx, Stripe, API keys/credentials, and debug information — none of those code paths were touched or rendered.
+A real screenshot of the actual Customer Portal was captured from `toms-svg/customer-chatbot-portal` (`main` branch, production, read-only — nothing was pushed back to it): the customer-facing "Overview" tab of the `Dashboard` component, rendered locally with fabricated safe demo props (no real customer data, no live Supabase/Stripe/Telnyx connection, no Admin Portal or Cold Caller Portal code touched). That version is not used in the current email — the illustrative mockup was kept instead per direction. If a real screenshot is wanted again later, the method is: check out `main` into a scratch git worktree, temporarily export the `Dashboard` component, point the app's entry at a small harness that renders it with hand-written demo data, screenshot with a headless browser, then discard the worktree.
 
 ## Live links wired in
 
