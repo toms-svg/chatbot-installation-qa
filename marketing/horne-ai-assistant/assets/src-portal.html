@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  body { background: #eef1f6; }
+  .stage { width: 1240px; height: 840px; padding: 30px 40px 40px; position: relative; display:flex; flex-direction:column; gap: 14px; }
+  .frame {
+    width: 100%; flex: 1; background: #fff; border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(20,30,60,0.14); overflow: hidden;
+    border: 1px solid #e2e6ee; display: flex;
+  }
+  .badge {
+    align-self: flex-start; background: #111827; color: #fff;
+    font-size: 12px; font-weight: 600; padding: 7px 13px; border-radius: 999px;
+    letter-spacing: .3px; box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+  }
+
+  .sidebar { width: 220px; background: #0f2542; color: #fff; padding: 26px 18px; display:flex; flex-direction:column; }
+  .side-logo { font-weight: 700; font-size: 16px; margin-bottom: 34px; padding: 0 8px; }
+  .side-logo span { color: #7fd6c9; }
+  .nav-item { padding: 10px 12px; border-radius: 8px; font-size: 13.5px; color: rgba(255,255,255,0.68); margin-bottom: 4px; }
+  .nav-item.active { background: rgba(127,214,201,0.14); color: #fff; font-weight: 600; }
+
+  .main { flex: 1; background: #f7f9fc; overflow: hidden; }
+  .topbar { background: #fff; border-bottom: 1px solid #e6e9f0; padding: 20px 32px; display:flex; align-items:center; justify-content:space-between; }
+  .topbar h1 { font-size: 19px; color: #111827; }
+  .topbar .sub { font-size: 12.5px; color: #8b93a3; margin-top: 3px; }
+  .status-pill { background: #e7f8f0; color: #16a34a; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 999px; display:flex; align-items:center; gap:6px; }
+  .status-pill::before { content:''; width:7px; height:7px; border-radius:50%; background:#16a34a; }
+
+  .content { padding: 26px 32px; }
+  .stat-row { display:flex; gap: 16px; margin-bottom: 22px; }
+  .stat-card { flex:1; background:#fff; border:1px solid #e6e9f0; border-radius: 12px; padding: 16px 18px; }
+  .stat-card .label { font-size: 12px; color: #8b93a3; font-weight: 600; }
+  .stat-card .value { font-size: 24px; font-weight: 700; color: #111827; margin-top: 6px; }
+  .stat-card .delta { font-size: 11.5px; color: #16a34a; margin-top: 4px; }
+
+  .panel { background: #fff; border: 1px solid #e6e9f0; border-radius: 12px; overflow: hidden; }
+  .panel-head { padding: 16px 20px; border-bottom: 1px solid #eef0f4; display:flex; align-items:center; justify-content:space-between; }
+  .panel-head h2 { font-size: 14.5px; color: #111827; }
+  .panel-head .view-all { font-size: 12.5px; color: #2563eb; font-weight: 600; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th { text-align:left; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: #9aa3b2; padding: 10px 20px; border-bottom: 1px solid #eef0f4; }
+  td { padding: 13px 20px; font-size: 13px; color: #1f2937; border-bottom: 1px solid #f2f4f8; }
+  tr:last-child td { border-bottom: none; }
+  .tag { font-size: 11px; font-weight: 600; padding: 4px 9px; border-radius: 6px; }
+  .tag.new { background:#eaf1ff; color:#2563eb; }
+  .tag.quote { background:#fef3e2; color:#c2760a; }
+  .tag.done { background:#e7f8f0; color:#16a34a; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="badge">MOCKUP — ILLUSTRATIVE PORTAL DESIGN, NOT A LIVE SCREENSHOT</div>
+  <div class="frame">
+    <div class="sidebar">
+      <div class="side-logo">T.O.M. <span>Portal</span></div>
+      <div class="nav-item active">AI Assistant Overview</div>
+      <div class="nav-item">Conversations</div>
+      <div class="nav-item">Leads</div>
+      <div class="nav-item">Business Info</div>
+      <div class="nav-item">Billing</div>
+      <div class="nav-item">Settings</div>
+    </div>
+    <div class="main">
+      <div class="topbar">
+        <div>
+          <h1>Horne Heating and Air Conditioning</h1>
+          <div class="sub">AI Assistant Overview</div>
+        </div>
+        <div class="status-pill">Assistant Active</div>
+      </div>
+      <div class="content">
+        <div class="stat-row">
+          <div class="stat-card">
+            <div class="label">CONVERSATIONS THIS MONTH</div>
+            <div class="value">128</div>
+            <div class="delta">Sample data</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">LEADS CAPTURED</div>
+            <div class="value">34</div>
+            <div class="delta">Sample data</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">AFTER-HOURS INQUIRIES</div>
+            <div class="value">19</div>
+            <div class="delta">Sample data</div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-head">
+            <h2>Recent Leads</h2>
+            <div class="view-all">View all</div>
+          </div>
+          <table>
+            <tr><th>Contact</th><th>Request</th><th>Received</th><th>Status</th></tr>
+            <tr><td>Sample Lead — J.M.</td><td>Quote request</td><td>Today, 6:42 PM</td><td><span class="tag new">New</span></td></tr>
+            <tr><td>Sample Lead — R.T.</td><td>AC not cooling</td><td>Today, 2:15 PM</td><td><span class="tag quote">Follow-up</span></td></tr>
+            <tr><td>Sample Lead — A.K.</td><td>Maintenance question</td><td>Yesterday</td><td><span class="tag done">Resolved</span></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
