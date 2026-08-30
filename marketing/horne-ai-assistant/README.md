@@ -4,8 +4,9 @@ Design/content package only. Nothing here was sent or deployed.
 
 ## Files
 
-- `email-horne-FINAL.html` — the finished email, ready for review in a browser (images load from `assets/` alongside it — see note below on why this isn't the file to actually send).
-- `email-horne-READY-TO-SEND.eml` — the actual sendable message: a real RFC 5322 MIME file (`multipart/related` with `multipart/alternative` text/plain + text/html, and the three screenshots attached as inline `image/png` parts referenced via `cid:`). This is what makes the images work in a real inbox — see SENDING INSTRUCTIONS below.
+- `email-horne-FINAL.html` — the finished email, ready for review in a browser (images load from `assets/` alongside it — only renders correctly if that folder travels with the file).
+- `email-horne-READY-TO-SEND.eml` — the actual sendable message: a real RFC 5322 MIME file (`multipart/related` with `multipart/alternative` text/plain + text/html, and the three screenshots attached as inline `image/png` parts referenced via `cid:`). Correct for a desktop mail client (Thunderbird/Apple Mail/Outlook); some mobile Gmail apps refuse to attach/open a raw `.eml` file directly.
+- `email-horne-FOR-MOBILE-COPY.html` — same email, but with all three images baked in as base64 data URIs so it's a single self-contained file. Made specifically for the copy-paste-into-Gmail-compose workflow on mobile, where there's no separate `assets` folder to lose track of and no `.eml` attachment restriction. Open it in a browser, select all, copy, paste into Gmail compose — Gmail re-hosts the images itself on send, so the final message doesn't carry the base64 bloat.
 - `email-template-REUSABLE.html` — the same email with `[COMPANY NAME]`, `[RECIPIENT]`, `[AI ASSISTANT COMPANY NAME/HEADER]`, `[SENDER EMAIL]`, `[DEMO CALENDAR LINK]`, and `[INDUSTRY-SPECIFIC QUESTION]` swapped in as placeholders, for reuse with future prospects.
 - `preview-desktop.png` / `preview-mobile.png` — rendered screenshots of the Horne email at desktop and mobile widths.
 - `assets/lead-capture-screenshot.png` — MOCKUP: AI Assistant collecting a quote request (not a live conversation), badged as such in the image.
